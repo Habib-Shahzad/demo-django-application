@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <form method="get">
+        <div class="mb-3 row align-items-end">
+            <label for="eval" class="col-sm-2 col-form-label">Input Value:</label>
+            <div class="col-sm-6">
+                <input value=0 type="number" name="eval" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Model1.f3</th>
+            <th>Model1.f4</th>
+            <th>Model2.f3</th>
+            <th>Model2.f4</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.f1 }}</td>
+            <td>{{ item.f2 }}</td>
+            <td>{{ item.f3 }}</td>
+            <td>{{ item.f4 }}</td>
+            <td>{{ item.total }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
